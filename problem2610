@@ -1,0 +1,14 @@
+class Solution:
+    def findMatrix(self, nums: List[int]) -> List[List[int]]:
+        array2D = []
+        while len(nums)>0:
+            tempArray = []
+            for i in range(len(nums)):
+                if not tempArray:             
+                    tempArray.append(nums[i])                    
+                elif nums[i] not in tempArray:               
+                        tempArray.append(nums[i])               
+            for n in tempArray:
+                nums.remove(n)           
+            array2D.append(tempArray)
+        return array2D   
